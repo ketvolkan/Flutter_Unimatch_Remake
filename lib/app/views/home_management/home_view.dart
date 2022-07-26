@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../../widgets/cards/custom_basic_card.dart';
+import '../../widgets/others/custom_body.dart';
+import '../../../core/constants/app_constants.dart';
 
 import '../../../core/utils/utils.dart';
 import 'package:get/get.dart';
@@ -17,43 +20,32 @@ class HomeView extends GetView<HomeController> {
     return CustomScaffold(
       appBar: _buildAppBar,
       bottomNavigationBar: const CustomNavigationBar(currentIndex: 1),
-      body: Container(
-        color: Colors.white,
-        padding: EdgeInsets.symmetric(horizontal: Utils.extraHighPadding),
-        child: Column(
-          children: [
-            SizedBox(height: Utils.highPadding),
-            _swipeField,
-          ],
-        ),
-      ),
+      body: CustomBody(child: _swipeField),
     );
   }
 
-  SizedBox get _swipeField => SizedBox(
-        height: Get.height * 0.75,
-        child: SwipeCards(
-          matchEngine: controller.matchEngine,
-          itemBuilder: (BuildContext context, int index) {
-            return DecoratedBox(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Utils.lowRadius),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color.fromARGB(255, 223, 223, 223),
-                    blurRadius: Utils.lowPadding,
-                    spreadRadius: Utils.extraLowPadding,
-                  ),
-                ],
-                image: DecorationImage(image: NetworkImage(controller.photoUrl[index]), fit: BoxFit.fitHeight),
-              ),
-              child: _infoBox,
-            );
-          },
-          onStackFinished: () {},
-          itemChanged: (SwipeItem item, int index) {},
-          upSwipeAllowed: false,
-          fillSpace: true,
+  Padding get _swipeField => Padding(
+        padding: EdgeInsets.only(top: Utils.normalPadding),
+        child: SizedBox(
+          height: Get.height * 0.75,
+          child: SwipeCards(
+            matchEngine: controller.matchEngine,
+            itemBuilder: (BuildContext context, int index) {
+              return CustomBasicCard(
+                boxShadow: BoxShadow(
+                  color: const Color.fromARGB(255, 223, 223, 223),
+                  blurRadius: Utils.lowPadding,
+                  spreadRadius: Utils.extraLowPadding,
+                ),
+                image: AssetImage("${AppConstants.baseJpgPath}${controller.photoUrl[index]}"),
+                child: _infoBox,
+              );
+            },
+            onStackFinished: () {},
+            itemChanged: (SwipeItem item, int index) {},
+            upSwipeAllowed: false,
+            fillSpace: true,
+          ),
         ),
       );
   CustomAppBar get _buildAppBar => CustomAppBar(

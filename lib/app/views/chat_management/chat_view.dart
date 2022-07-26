@@ -1,7 +1,9 @@
-import 'package:flutter_unimatch_remake/app/views/chat_management/chat_controller.dart';
-import 'package:flutter_unimatch_remake/app/views/chat_management/widgets/message_preview_card.dart';
-import 'package:flutter_unimatch_remake/app/widgets/others/random_circle_image.dart';
-import 'package:flutter_unimatch_remake/core/utils/utils.dart';
+import 'chat_controller.dart';
+import 'widgets/message_preview_card.dart';
+import '../../widgets/cards/custom_basic_card.dart';
+import '../../widgets/others/custom_body.dart';
+import '../../widgets/others/random_circle_image.dart';
+import '../../../core/utils/utils.dart';
 
 import '../../widgets/others/custom_appbar.dart';
 import '../../widgets/others/custom_scaffold.dart';
@@ -15,24 +17,16 @@ class ChatView extends GetView<ChatController> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       appBar: _buildAppBar,
-      body: Container(
-        color: Colors.white,
-        padding: EdgeInsets.symmetric(horizontal: Utils.normalPadding),
+      body: CustomBody(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: Utils.normalPadding),
-            CustomText.extraHigh(
-              "New Matches!",
-              fontFamily: Get.theme.appBarTheme.titleTextStyle?.fontFamily,
-            ),
+            titleText("New Matches!"),
             SizedBox(height: Utils.normalPadding),
             SizedBox(height: Get.height * 0.1, child: matchField),
             SizedBox(height: Utils.normalPadding),
-            CustomText.extraHigh(
-              "Conversations",
-              fontFamily: Get.theme.appBarTheme.titleTextStyle?.fontFamily,
-            ),
+            titleText("Conversations"),
             SizedBox(height: Utils.normalPadding),
             Expanded(child: chatMessageField),
           ],
@@ -41,17 +35,19 @@ class ChatView extends GetView<ChatController> {
     );
   }
 
-  DecoratedBox get matchField => DecoratedBox(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(Utils.highRadius),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: const Color.fromARGB(255, 223, 223, 223),
-              blurRadius: Utils.lowPadding,
-              spreadRadius: Utils.extraLowPadding,
-            ),
-          ],
+  CustomText titleText(String text) {
+    return CustomText.extraHigh(
+      text,
+      fontFamily: Get.theme.appBarTheme.titleTextStyle?.fontFamily,
+    );
+  }
+
+  CustomBasicCard get matchField => CustomBasicCard(
+        borderRadius: Utils.highRadius,
+        boxShadow: BoxShadow(
+          color: const Color.fromARGB(255, 223, 223, 223),
+          blurRadius: Utils.lowPadding,
+          spreadRadius: Utils.extraLowPadding,
         ),
         child: Padding(
           padding: EdgeInsets.all(Utils.lowPadding),
@@ -65,18 +61,13 @@ class ChatView extends GetView<ChatController> {
           ),
         ),
       );
-  DecoratedBox get chatMessageField => DecoratedBox(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(Utils.highRadius),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: const Color.fromARGB(255, 223, 223, 223),
-              blurRadius: Utils.lowPadding,
-              spreadRadius: Utils.extraLowPadding,
-            ),
-          ],
+  CustomBasicCard get chatMessageField => CustomBasicCard(
+        boxShadow: BoxShadow(
+          color: const Color.fromARGB(255, 223, 223, 223),
+          blurRadius: Utils.lowPadding,
+          spreadRadius: Utils.extraLowPadding,
         ),
+        borderRadius: Utils.normalRadius,
         child: ListView.separated(
           itemBuilder: (context, index) {
             final messageModel = controller.messages[index];

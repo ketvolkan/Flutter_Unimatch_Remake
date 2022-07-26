@@ -1,1 +1,3 @@
-class AppConstants {}
+class AppConstants {
+  static const baseJpgPath = "assets/jpg/";
+}

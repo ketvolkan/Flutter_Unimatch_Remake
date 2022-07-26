@@ -1,4 +1,4 @@
-import 'package:flutter_unimatch_remake/core/service/base_model.dart';
+import '../../service/base_model.dart';
 
 //Deneme Amaçlı Yapılan Bir Model
 class MessageModel extends BaseModel {

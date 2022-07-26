@@ -1,4 +1,4 @@
-import 'package:flutter_unimatch_remake/core/models/message_models/message_model.dart';
+import '../../../core/models/message_models/message_model.dart';
 import 'package:get/get.dart';
 
 class ChatController extends GetxController {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../cards/custom_basic_card.dart';
 import '../../../core/utils/utils.dart';
 
 class IconWithBackground extends StatelessWidget {
@@ -13,23 +14,10 @@ class IconWithBackground extends StatelessWidget {
       padding: EdgeInsets.all(padding ?? 0),
       child: InkWell(
         onTap: onTap,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(Utils.extraHighRadius),
-            boxShadow: [
-              BoxShadow(
-                color: const Color.fromARGB(255, 223, 223, 223),
-                blurRadius: Utils.lowRadius,
-              )
-            ],
-          ),
-          child: Icon(
-            icon,
-            color: Colors.black,
-            size: (padding ?? Utils.normalPadding) * 1.5,
-          ),
-        ),
+        child: CustomBasicCard(
+            boxShadow: BoxShadow(color: const Color.fromARGB(255, 223, 223, 223), blurRadius: Utils.lowRadius),
+            borderRadius: Utils.extraHighRadius,
+            child: Icon(icon, color: Colors.black, size: (padding ?? Utils.normalPadding) * 1.5)),
       ),
     );
   }
