@@ -6,9 +6,10 @@
 
 <h3> versions: </h3>
 &emsp;dart: 2.17.5<br>
-&emsp;flutter: 3.0.5
-&emsp;swipe_cards: ^1.0.0
-&emsp;google_fonts: ^3.0.1
+&emsp;flutter: 3.0.5<br>
+&emsp;swipe_cards: ^1.0.0<br>
+&emsp;google_fonts: ^3.0.1<br>
+&emsp;intl: ^0.17.0
 <h3> aim: </h3>
 &emsp;Flutter ile yaptığım ilk proje olduğu için ve kodlarının clean kod ve solid kavramlarına uygun olmadığı için Unimatch uygulamamı yeniden yapma kararı aldım
 

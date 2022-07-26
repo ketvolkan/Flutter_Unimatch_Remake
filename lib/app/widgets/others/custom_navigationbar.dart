@@ -49,7 +49,7 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
                   if (value != currentIndex) Get.offAndToNamed(AppRoutes.NOTIFICATION);
                   break;
                 case 3:
-                  if (value != currentIndex) Get.offAndToNamed(AppRoutes.CHAT);
+                  if (value != currentIndex) Get.toNamed(AppRoutes.CHAT);
                   break;
 
                 default:

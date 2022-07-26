@@ -31,6 +31,7 @@ class AppPages {
       name: AppRoutes.CHAT,
       page: () => const ChatView(),
       binding: ChatBinding(),
+      transition: Transition.cupertino,
     ),
   ];
 }
