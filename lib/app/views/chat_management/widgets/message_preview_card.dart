@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unimatch_remake/app/widgets/others/custom_text.dart';
-import 'package:flutter_unimatch_remake/app/widgets/others/random_circle_image.dart';
-import 'package:flutter_unimatch_remake/core/models/message_models/message_model.dart';
-import 'package:flutter_unimatch_remake/core/utils/utils.dart';
+import '../../../widgets/others/custom_text.dart';
+import '../../../widgets/others/random_circle_image.dart';
+import '../../../../core/models/message_models/message_model.dart';
+import '../../../../core/utils/utils.dart';
 import 'package:intl/intl.dart';
 
 class MessagePreviewCard extends StatelessWidget {
