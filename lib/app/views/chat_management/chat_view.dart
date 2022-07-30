@@ -1,4 +1,4 @@
-import 'package:flutter_unimatch_remake/core/variables/colors.dart';
+import '../../../core/variables/colors.dart';
 
 import 'chat_controller.dart';
 import 'widgets/message_preview_card.dart';

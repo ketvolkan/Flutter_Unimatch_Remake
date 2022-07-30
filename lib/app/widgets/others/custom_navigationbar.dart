@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unimatch_remake/core/variables/colors.dart';
+import '../../../core/variables/colors.dart';
 import '../../routes/app_routes.dart';
 import 'package:get/get.dart';
 

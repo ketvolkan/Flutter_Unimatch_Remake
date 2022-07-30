@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'app/views/splash/splash_screen_binding.dart';
 import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
-import 'app/views/home_management/home_binding.dart';
 import 'core/service/base_service.dart';
 import 'theme/app_themes.dart';
 
@@ -32,8 +32,8 @@ class MyApp extends StatelessWidget {
       theme: AppThemes.lightTheme,
       getPages: AppPages.PAGES,
       defaultTransition: Transition.noTransition,
-      initialBinding: HomeBinding(),
-      initialRoute: AppRoutes.HOME,
+      initialBinding: SplashBinding(),
+      initialRoute: AppRoutes.SPLASH,
       locale: const Locale('tr', 'TR'),
     );
   }

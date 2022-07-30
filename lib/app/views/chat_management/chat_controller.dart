@@ -1,5 +1,6 @@
-import '../../../core/models/message_models/message_model.dart';
 import 'package:get/get.dart';
+
+import '../../../core/models/message_models/message_model.dart';
 
 class ChatController extends GetxController {
   List<MessageModel> messages = [];

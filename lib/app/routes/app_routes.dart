@@ -3,4 +3,5 @@ class AppRoutes {
   static const String HOME = "/home";
   static const String NOTIFICATION = "/notification";
   static const String CHAT = "/chat";
+  static const String SPLASH = "/splash";
 }

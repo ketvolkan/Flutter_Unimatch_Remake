@@ -1,4 +1,4 @@
-import 'package:flutter_unimatch_remake/core/variables/colors.dart';
+import '../../../core/variables/colors.dart';
 
 import 'widgets/information_buttons.dart';
 import '../../widgets/cards/custom_basic_card.dart';

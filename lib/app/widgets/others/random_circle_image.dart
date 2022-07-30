@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unimatch_remake/core/utils/utils.dart';
-import 'package:flutter_unimatch_remake/core/variables/colors.dart';
+import '../../../core/utils/utils.dart';
+import '../../../core/variables/colors.dart';
 import '../../../core/constants/app_constants.dart';
 
 class RandomCircleImage extends StatelessWidget {

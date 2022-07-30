@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unimatch_remake/app/views/notification_management/notification_controller.dart';
-import 'package:flutter_unimatch_remake/app/views/notification_management/widgets/notification_card.dart';
-import 'package:flutter_unimatch_remake/core/utils/utils.dart';
+import 'notification_controller.dart';
+import 'widgets/notification_card.dart';
+import '../../../core/utils/utils.dart';
 import 'package:get/get.dart';
 
 import '../../widgets/others/custom_appbar.dart';

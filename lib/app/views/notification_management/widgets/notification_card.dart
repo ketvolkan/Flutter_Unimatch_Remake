@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_unimatch_remake/app/widgets/cards/custom_basic_card.dart';
-import 'package:flutter_unimatch_remake/app/widgets/others/custom_text.dart';
-import 'package:flutter_unimatch_remake/core/utils/utils.dart';
-import 'package:flutter_unimatch_remake/core/variables/colors.dart';
+import '../../../widgets/cards/custom_basic_card.dart';
+import '../../../widgets/others/custom_text.dart';
+import '../../../../core/utils/utils.dart';
+import '../../../../core/variables/colors.dart';
 
 class NotificationCard extends StatelessWidget {
   final String notification;

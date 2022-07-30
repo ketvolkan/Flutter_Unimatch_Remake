@@ -8,6 +8,8 @@ import '../views/notification_management/notification_binding.dart';
 import '../views/notification_management/notification_view.dart';
 import '../views/profile_management/profile_binding.dart';
 import '../views/profile_management/profile_view.dart';
+import '../views/splash/splash_screen_binding.dart';
+import '../views/splash/splash_screen_view.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -32,6 +34,12 @@ class AppPages {
       page: () => const ChatView(),
       binding: ChatBinding(),
       transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: AppRoutes.SPLASH,
+      page: () => const SplashView(),
+      binding: SplashBinding(),
+      transition: Transition.fade,
     ),
   ];
 }
