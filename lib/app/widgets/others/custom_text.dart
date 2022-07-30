@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unimatch_remake/core/variables/colors.dart';
 
 import '../../../../../core/utils/utils.dart';
 
@@ -103,7 +104,7 @@ class CustomText extends StatelessWidget {
       text ?? '',
       style: TextStyle(
         fontSize: textSize ?? Utils.normalTextSize,
-        color: textColor ?? Colors.black,
+        color: textColor ?? AppColors.blackColor,
         decoration: underlined
             ? TextDecoration.underline
             : lineThrough

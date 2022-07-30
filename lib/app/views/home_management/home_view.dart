@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unimatch_remake/core/variables/colors.dart';
 import '../../widgets/cards/custom_basic_card.dart';
 import '../../widgets/others/custom_body.dart';
 import '../../../core/constants/app_constants.dart';
@@ -33,7 +34,7 @@ class HomeView extends GetView<HomeController> {
             itemBuilder: (BuildContext context, int index) {
               return CustomBasicCard(
                 boxShadow: BoxShadow(
-                  color: const Color.fromARGB(255, 223, 223, 223),
+                  color: AppColors.shadowColor,
                   blurRadius: Utils.lowPadding,
                   spreadRadius: Utils.extraLowPadding,
                 ),
@@ -49,14 +50,15 @@ class HomeView extends GetView<HomeController> {
         ),
       );
   CustomAppBar get _buildAppBar => CustomAppBar(
-        centerTitle: true,
         showLeadingBackIcon: false,
+        centerTitle: true,
         title: CustomText.custom(
           "Unimatch Remake",
           fontFamily: Get.theme.appBarTheme.titleTextStyle?.fontFamily,
           textSize: Get.width * 0.07,
         ),
       );
+
   Padding get _infoBox => Padding(
         padding: EdgeInsets.all(Utils.extraHighPadding),
         child: Column(
@@ -65,16 +67,16 @@ class HomeView extends GetView<HomeController> {
           children: [
             CustomText.custom(
               "Volkan Ket, 22",
-              textColor: Colors.white,
+              textColor: AppColors.whiteColor,
               textSize: Get.width * 0.075,
             ),
             Row(
               children: [
-                Icon(Icons.location_pin, color: Colors.white, size: Utils.normalIconSize),
+                Icon(Icons.location_pin, color: AppColors.whiteColor, size: Utils.normalIconSize),
                 SizedBox(width: Utils.extraLowPadding),
                 CustomText(
                   "4 Kilometre Uzakta (Bursa)",
-                  textColor: Colors.white,
+                  textColor: AppColors.whiteColor,
                 )
               ],
             ),

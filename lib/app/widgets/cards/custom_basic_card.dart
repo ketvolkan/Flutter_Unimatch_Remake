@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unimatch_remake/core/variables/colors.dart';
 import '../../../core/utils/utils.dart';
 
 class CustomBasicCard extends StatelessWidget {
@@ -7,15 +8,16 @@ class CustomBasicCard extends StatelessWidget {
   final BoxShadow? boxShadow;
   final double? borderRadius;
   final Color? color;
-  const CustomBasicCard({Key? key, required this.child, this.image, this.boxShadow, this.borderRadius, this.color})
+  final BorderRadius? border;
+  const CustomBasicCard({Key? key, required this.child, this.image, this.boxShadow, this.borderRadius, this.color, this.border})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: color ?? Colors.white,
-        borderRadius: BorderRadius.circular(borderRadius ?? Utils.lowRadius),
+        color: color ?? AppColors.whiteColor,
+        borderRadius: border ?? BorderRadius.circular(borderRadius ?? Utils.lowRadius),
         boxShadow: [if (boxShadow is BoxShadow) boxShadow!],
         image: image is ImageProvider<Object> ? DecorationImage(image: image!, fit: BoxFit.fitHeight) : null,
       ),

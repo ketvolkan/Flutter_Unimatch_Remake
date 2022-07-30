@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unimatch_remake/core/variables/colors.dart';
 import '../../routes/app_routes.dart';
 import 'package:get/get.dart';
 
@@ -14,8 +15,8 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
     Key? key,
     required this.currentIndex,
     this.backgroundColor,
-    this.selectedItemColor = Colors.black,
-    this.unSelectedItemColor = Colors.grey,
+    this.selectedItemColor = AppColors.blackColor,
+    this.unSelectedItemColor = AppColors.grayColor,
     this.onTap,
     this.notchMargin = 0,
   }) : super(key: key);

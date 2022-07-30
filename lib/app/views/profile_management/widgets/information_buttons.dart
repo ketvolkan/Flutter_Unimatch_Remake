@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unimatch_remake/core/variables/colors.dart';
 import '../../../widgets/others/custom_text.dart';
 import '../../../../core/utils/utils.dart';
 
@@ -8,7 +9,7 @@ class informationWidget extends StatelessWidget {
     this.subtitle,
     required this.title,
     required this.icon,
-    this.iconColor = Colors.black,
+    this.iconColor = AppColors.blackColor,
     this.onTap,
   }) : super(key: key);
   final String title;
@@ -29,7 +30,7 @@ class informationWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               CustomText.high(title),
-              if (subtitle is String) CustomText(subtitle, textColor: Colors.grey),
+              if (subtitle is String) CustomText(subtitle, textColor: AppColors.grayColor),
             ],
           )
         ],

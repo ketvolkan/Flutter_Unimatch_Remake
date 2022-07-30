@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unimatch_remake/core/variables/colors.dart';
 import '../cards/custom_basic_card.dart';
 import '../../../core/utils/utils.dart';
 
@@ -15,9 +16,9 @@ class IconWithBackground extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: CustomBasicCard(
-            boxShadow: BoxShadow(color: const Color.fromARGB(255, 223, 223, 223), blurRadius: Utils.lowRadius),
+            boxShadow: BoxShadow(color: AppColors.shadowColor, blurRadius: Utils.lowRadius),
             borderRadius: Utils.extraHighRadius,
-            child: Icon(icon, color: Colors.black, size: (padding ?? Utils.normalPadding) * 1.5)),
+            child: Icon(icon, color: AppColors.blackColor, size: (padding ?? Utils.normalPadding) * 1.5)),
       ),
     );
   }

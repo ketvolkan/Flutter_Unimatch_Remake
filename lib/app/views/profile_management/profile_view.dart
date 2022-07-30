@@ -1,3 +1,5 @@
+import 'package:flutter_unimatch_remake/core/variables/colors.dart';
+
 import 'widgets/information_buttons.dart';
 import '../../widgets/cards/custom_basic_card.dart';
 import '../../widgets/others/custom_body.dart';
@@ -26,62 +28,77 @@ class ProfileView extends GetView<ProfileController> {
             _profilePictureField,
             SizedBox(height: Utils.normalPadding),
             CustomBody(
-              child: SizedBox(
-                width: Get.width,
-                child: CustomBasicCard(
-                  boxShadow: BoxShadow(
-                    color: const Color.fromARGB(255, 223, 223, 223),
-                    blurRadius: Utils.lowPadding,
-                    spreadRadius: Utils.extraLowPadding,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(Utils.normalPadding),
-                    child: Column(
-                      children: [
-                        infoSide,
-                        SizedBox(height: Utils.normalPadding),
-                        const informationWidget(
-                          icon: Icons.account_circle_outlined,
-                          title: "Profil",
-                          subtitle: "Bilgileri Güncelle",
-                        ),
-                        SizedBox(height: Utils.normalPadding),
-                        const informationWidget(
-                          icon: Icons.add_a_photo_outlined,
-                          title: "Fotoğraf",
-                          subtitle: "Fotoğraf Ekle",
-                        ),
-                        SizedBox(height: Utils.normalPadding),
-                        const informationWidget(
-                          icon: Icons.settings,
-                          title: "Ayarlar",
-                          subtitle: "Uygulama Ayarları",
-                        ),
-                        SizedBox(height: Utils.normalPadding),
-                        const informationWidget(
-                          icon: Icons.power_settings_new,
-                          title: "Çıkış Yap",
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+              child: Column(
+                children: [
+                  _infoSide,
+                  SizedBox(height: Utils.normalPadding),
+                  _buttonSide,
+                ],
               ),
             ),
           ],
         ));
   }
 
-  Row get infoSide => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          CustomText.extraHigh(
-            "Volkan Ket",
-            fontFamily: Get.theme.appBarTheme.titleTextStyle?.fontFamily,
+  SizedBox get _buttonSide => SizedBox(
+        width: Get.width,
+        child: CustomBasicCard(
+          boxShadow: BoxShadow(
+            color: AppColors.shadowColor,
+            blurRadius: Utils.lowPadding,
+            spreadRadius: Utils.extraLowPadding,
           ),
-          CustomText(DateFormat("yyyy/MM/dd").format(DateTime.now()))
-        ],
+          child: Padding(
+            padding: EdgeInsets.all(Utils.normalPadding),
+            child: Column(
+              children: [
+                const informationWidget(
+                  icon: Icons.account_circle_outlined,
+                  title: "Profil",
+                  subtitle: "Bilgileri Güncelle",
+                ),
+                SizedBox(height: Utils.normalPadding),
+                const informationWidget(
+                  icon: Icons.add_a_photo_outlined,
+                  title: "Fotoğraf",
+                  subtitle: "Fotoğraf Ekle",
+                ),
+                SizedBox(height: Utils.normalPadding),
+                const informationWidget(
+                  icon: Icons.settings,
+                  title: "Ayarlar",
+                  subtitle: "Uygulama Ayarları",
+                ),
+                SizedBox(height: Utils.normalPadding),
+                const informationWidget(
+                  icon: Icons.power_settings_new,
+                  title: "Çıkış Yap",
+                ),
+              ],
+            ),
+          ),
+        ),
       );
+
+  CustomBasicCard get _infoSide => CustomBasicCard(
+      boxShadow: BoxShadow(
+        color: AppColors.shadowColor,
+        blurRadius: Utils.lowPadding,
+        spreadRadius: Utils.extraLowPadding,
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(Utils.normalPadding),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CustomText.extraHigh(
+              "Volkan Ket",
+              fontFamily: Get.theme.appBarTheme.titleTextStyle?.fontFamily,
+            ),
+            CustomText(DateFormat("yyyy/MM/dd").format(DateTime.now()))
+          ],
+        ),
+      ));
 
   SizedBox get _profilePictureField => SizedBox(
         width: Get.width,

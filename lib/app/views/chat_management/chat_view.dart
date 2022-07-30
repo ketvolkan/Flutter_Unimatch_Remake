@@ -1,3 +1,5 @@
+import 'package:flutter_unimatch_remake/core/variables/colors.dart';
+
 import 'chat_controller.dart';
 import 'widgets/message_preview_card.dart';
 import '../../widgets/cards/custom_basic_card.dart';
@@ -45,7 +47,7 @@ class ChatView extends GetView<ChatController> {
   CustomBasicCard get matchField => CustomBasicCard(
         borderRadius: Utils.highRadius,
         boxShadow: BoxShadow(
-          color: const Color.fromARGB(255, 223, 223, 223),
+          color: AppColors.shadowColor,
           blurRadius: Utils.lowPadding,
           spreadRadius: Utils.extraLowPadding,
         ),
@@ -63,11 +65,11 @@ class ChatView extends GetView<ChatController> {
       );
   CustomBasicCard get chatMessageField => CustomBasicCard(
         boxShadow: BoxShadow(
-          color: const Color.fromARGB(255, 223, 223, 223),
+          color: AppColors.shadowColor,
           blurRadius: Utils.lowPadding,
           spreadRadius: Utils.extraLowPadding,
         ),
-        borderRadius: Utils.normalRadius,
+        border: BorderRadius.vertical(top: Radius.circular(Utils.normalRadius)),
         child: ListView.separated(
           itemBuilder: (context, index) {
             final messageModel = controller.messages[index];

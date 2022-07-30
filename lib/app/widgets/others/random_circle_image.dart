@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unimatch_remake/core/utils/utils.dart';
+import 'package:flutter_unimatch_remake/core/variables/colors.dart';
 import '../../../core/constants/app_constants.dart';
 
 class RandomCircleImage extends StatelessWidget {
@@ -18,10 +20,10 @@ class RandomCircleImage extends StatelessWidget {
         height: height,
         child: FittedBox(
             child: CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 73.0,
+          backgroundColor: AppColors.whiteColor,
+          radius: Utils.extraHighRadius,
           child: CircleAvatar(
-            radius: 70.0,
+            radius: Utils.extraHighRadius - 1,
             backgroundImage: AssetImage(imageUrl),
           ),
         )));
